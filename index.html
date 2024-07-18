@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
 <html>
-<head>	
+<head>
   <!-- Kode menampilkan peringatan untuk mengaktifkan javascript-->
+
 <div align="center"><noscript>
    <div style="position:fixed; top:0px; left:0px; z-index:3000; height:100%; width:100%; background-color:#FFFFFF">
    <div style="font-family: Arial; font-size: 17px; background-color:#00bbf9; padding: 11pt;">Mohon aktifkan javascript pada browser untuk mengakses halaman ini!</div></div>
@@ -98,22 +99,10 @@ document.onmousedown = rtclickcheck;
 </SCRIPT>
 
 <body>
-<script src="https://unpkg.com/video.js/dist/video.js"></script>
- <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>f="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+
   </body>
 
-<head>
-<STYLE>
-<!--
-a:hover 
-{
-  background-color: rgb(255, 255, 0);
-}
-//-->
-</STYLE>
-</head>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Tom&Jeruk</title>
   <body style="background-color: #eb11eb;">
@@ -153,14 +142,37 @@ a:hover
 <iframe style="width:350px;height:340px;"type="text/html" src="https://www.youtube.com/embed/_thKXe8PSXo?si=ua1u4QVFGYRwecwW" allow="fullscreen" frameborder=0></iframe>
 </body> 
     </html>
- <body>
-    <div class="row">
-        <div class="column" style="background-color:#FFB695;">
-            <h2>FTA</h2>
-            <a href="https://www.rctiplus.com/live">rcti+</a>
-		<a href="https://www.indihometv.com/tv/live">useetv</a>
-<a href="https://maxstream.tv/tv-channels">maxstream</a>
-        </div>
+	<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play .m3u8 File in HTML5 video player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- Include the hls.js library -->
+
+<!-- Create a video element -->
+<video id="video" controls></video>
+
+<!-- Use hls.js to create a player and load the .m3u8 file -->
+<script>
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8');
+    hls.attachMedia(video);
+    video.play();
+  }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8';
+    video.addEventListener('loadedmetadata',function() {
+      video.play();
+    });
+  }
+
+</html>
     </body>
     </html>
 <noscript>
