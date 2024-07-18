@@ -157,37 +157,26 @@ loadCSS("https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css");
 		<a href="https://www.indihometv.com/tv/live">useetv</a>
 <a href="https://maxstream.tv/tv-channels">maxstream</a>
         </div>
-	 <script>
-//<![CDATA[
-fluidPlayer(
-    'hls-video',
-    {
-        layoutControls: {
-            fillToContainer: false,
-            autoPlay: true
-        }
-    }
-);
-//]]>
-</script>
-	.video-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.video-responsive video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border:0;
-}
-	<div class="video-responsive">
-<video id="hls-video" poster="">
-    <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_928.m3u8" type="application/x-mpegURL"/>
-</video>
+	MLResult Skip Results Iframe
+EDIT ON
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="https://vjs.zencdn.net/8.9.0/video-js.css" rel="stylesheet" />
+       <script defer src="https://vjs.zencdn.net/8.9.0/video.min.js"></script>
+<center>
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preLoad="auto"
+    width="360"
+    height="220"
+    data-setup="{}"
+    >
+    <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_928.m3u8" type="application/x-mpegURL">
+        </video>
+    </center>
 </div>
  </body>
 </html>
