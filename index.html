@@ -167,28 +167,42 @@ loadCSS("https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css");
 	
 </head>
 
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=utf-8 />
-<title>24/7 XTION</title>
-  
-
-  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play .m3u8 File in HTML5 video player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-  data-setup='{}'>
-    <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8" type="application/x-mpegURL">
-  </video>
-  
+   <!-- Include the hls.js library -->
+
+<!-- Create a video element -->
+<video id="video" controls></video>
+
+<!-- Use hls.js to create a player and load the .m3u8 file -->
 <script>
-var player = videojs('my_video_1');
-player.play();
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"');
+    hls.attachMedia(video);
+    video.play();
+  }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8';
+    video.addEventListener('loadedmetadata',function() {
+      video.play();
+    });
+  }
+ 
 </script>
+
+</body>
+</html>
   
 </body>
 </html>
