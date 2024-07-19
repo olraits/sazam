@@ -163,25 +163,27 @@ p:hover, h1:hover, a:hover {
 }
 </style>
 		 
-	<script src="https://bradmax.com/client/files/player-js/73a9716fd26717763cd2d46fb9e41463645853de_14815/bradmax_player.js" ></script>
-<div style="width: 340px; height: 340px; background: black;" id="PLAYER_DOM_ID"></div>
-<script type="text/javascript">
-    var config = {
-        dataProvider: {
-            source: [
-                { url: "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8" }
-            ]
-        }
-    };
-
-    /** find player container in html DOM tree. */
-    var element = document.getElementById("PLAYER_DOM_ID");
-
-    /** create player */
-    var player = window.bradmax.player.create(element, config);
-	
-</script>	 
-</div>		 
+	<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>UN Web TV</title>
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js
+    </script>
+  </head>
+  <body>
+    <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto" data-setup='{}'>
+      <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8" type="application/x-mpegURL">
+    </video>
+    <script>
+      var player = videojs('my_video_1');
+      player.play();
+    </script>
+  </body>
+</html>
+		 
 </html>	 		 
 <noscript>
 <!DOCTYPE html>
