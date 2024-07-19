@@ -128,6 +128,18 @@ document.onmousedown = rtclickcheck;
 </table>
 <html>
 <head>
+	 <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet"/>
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+ <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>f="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+  data-setup='{}'>
+    <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8" type="application/x-mpegURL"/>
+  </video>
+  
+<script>
+var player = videojs('my_video_1');
+player.play();
+</script>
 	<title>JustPlayer</title>
 </head>
 <body>
@@ -162,20 +174,7 @@ p:hover, h1:hover, a:hover {
   background-color: yellow;
 }
 </style>
-		 
-	 <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet"/>
-<script src="https://unpkg.com/video.js/dist/video.js"></script>
- <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>f="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-<video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
-  data-setup='{}'>
-    <source src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8" type="application/x-mpegURL"/>
-  </video>
-  
-<script>
-var player = videojs('my_video_1');
-player.play();
-</script>
-		 
+		 	 
 </html>	 		 
 <noscript>
 <!DOCTYPE html>
